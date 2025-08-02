@@ -1,0 +1,49 @@
+{
+  "datasets": [
+    {
+      "year": 2016,
+      "file": "/data/datasets/salary_out/2016.json",
+      "records": 1662
+    },
+    {
+      "year": 2017,
+      "file": "/data/datasets/salary_out/2017.json",
+      "records": 2205
+    },
+    {
+      "year": 2018,
+      "file": "/data/datasets/salary_out/2018.json",
+      "records": 2367
+    },
+    {
+      "year": 2019,
+      "file": "/data/datasets/salary_out/2019.json",
+      "records": 2739
+    },
+    {
+      "year": 2020,
+      "file": "/data/datasets/salary_out/2020.json",
+      "records": 2393
+    },
+    {
+      "year": 2021,
+      "file": "/data/datasets/salary_out/2021.json",
+      "records": 2372
+    },
+    {
+      "year": 2022,
+      "file": "/data/datasets/salary_out/2022.json",
+      "records": 3194
+    },
+    {
+      "year": 2023,
+      "file": "/data/datasets/salary_out/2023.json",
+      "records": 3696
+    },
+    {
+      "year": 2024,
+      "file": "/data/datasets/salary_out/2024.json",
+      "records": 3534
+    }
+  ]
+}
