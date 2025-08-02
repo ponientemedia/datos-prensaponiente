@@ -21,7 +21,7 @@ function changePage (p:number) { page.value = p; fetchPage(filters, p) }
 
 onMounted(async () => {
   await ready.value                                     // 2 espera
-  filters.year = years[0]                               // usa el más reciente
+  filters.year = years.value[0]                               // usa el más reciente
   fetchPage(filters, 1)
 })
 

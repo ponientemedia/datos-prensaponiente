@@ -1,19 +1,28 @@
 // src/features/salarios/composables/useManifest.ts
-import { ref } from 'vue'
-interface DatasetMeta { year:number; file:string; records:number }
+import { ref, computed } from 'vue'
+
+interface DatasetMeta { year: number; file: string; records: number }
 
 const datasets   = ref<DatasetMeta[]>([])
 const loadedOnce = ref(false)
 
-export async function useManifest () {
+/** carga (solo la primera vez) y expone datos del manifest */
+export function useManifest() {
   if (!loadedOnce.value) {
-    const res = await fetch('/data/datasets/salary_out/manifest.json')
-    datasets.value = (await res.json()).datasets
-    loadedOnce.value = true
+    fetch('/data/datasets/salary_out/manifest.json')
+      .then(r => r.json())
+      .then(json => {
+        datasets.value   = json.datasets as DatasetMeta[]
+        loadedOnce.value = true
+      })
   }
-  return {
-    ready:   loadedOnce,                                 // 👈 nuevo
-    years:   datasets.value.map(d => d.year).sort((a,b)=>b-a),
-    fileFor: (y:number) => datasets.value.find(d => d.year===y)?.file
-  }
+
+  const years = computed(() =>
+    datasets.value.map(d => d.year).sort((a, b) => b - a)
+  )
+
+  const fileFor = (y: number) =>
+    datasets.value.find(d => d.year === y)?.file
+
+  return { ready: loadedOnce, years, fileFor }
 }
