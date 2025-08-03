@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import Navbar    from '@/components/navbar/Navbar.vue'
 import AppFooter from '@/components/footer/AppFooter.vue'
+const props = defineProps<{
+  hideNav?: boolean
+}>()
 </script>
 
 <template>

@@ -56,18 +56,18 @@
           {{ item.grossPay.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' }) }}
         </template>
 
-        <template #footer>
-          <v-row class="pa-4" align="center">
-            <v-col cols="12" class="text-right">
-              <v-pagination
-                v-model="page"
-                :length="pageCount"
-                total-visible="7"
-                circle
-              />
-            </v-col>
-          </v-row>
-        </template>
+<template #footer.prepend>
+  <v-row class="pa-4" align="center">
+    <v-col cols="12" class="text-right">
+      <v-pagination
+        v-model="page"
+        :length="pageCount"
+        total-visible="7"
+        circle
+      />
+    </v-col>
+  </v-row>
+</template>
       </v-data-table>
     </v-card>
   </div>
@@ -116,14 +116,14 @@ function applyFilters() {
 
 // 5) paginación
 const pageCount = computed(() => Math.ceil(total.value / itemsPerPage.value))
-
+import type { DataTableHeader } from 'vuetify'
 // 6) cabezeras de la tabla
-const headers = [
-  { text: 'Año',      value: 'year',     align: 'start' },
-  { text: 'Nombre',   value: 'fullName', align: 'start' },
-  { text: 'Cargo',    value: 'role',     align: 'start' },
-  { text: 'Región',   value: 'region',   align: 'start' },
-  { text: 'Bruto',    value: 'grossPay', align: 'end'   },
+const headers: DataTableHeader[] = [
+  { text: 'Año',    value: 'year',     align: 'start' },
+  { text: 'Nombre', value: 'fullName', align: 'start' },
+  { text: 'Cargo',  value: 'role',     align: 'start' },
+  { text: 'Región', value: 'region',   align: 'start' },
+  { text: 'Bruto',  value: 'grossPay', align: 'end'   },
 ]
 </script>
 
