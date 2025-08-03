@@ -14,8 +14,8 @@ const header = computed(() => props.columns.map(c => c.label))
 <template>
   <div class="overflow-x-auto shadow-lg rounded-xl border border-neutral-800">
     <table class="min-w-full text-sm">
-      <thead class="bg-neutral-800 text-neutral-400">
-        <tr>
+      <thead class="sticky top-0 bg-neutral-800 z-10">
+       <tr class="even:bg-neutral-800/40 hover:bg-neutral-700/60 transition">
           <th v-for="h in header" :key="h" class="px-4 py-2 text-left">{{ h }}</th>
         </tr>
       </thead>

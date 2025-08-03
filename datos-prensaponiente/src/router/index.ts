@@ -1,25 +1,38 @@
-// src/router/index.ts  (o index.js si no usas TS)
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/pages/Home.vue'
+// src/router/index.ts
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 
-const routes = [
+import AppShell       from '@/layouts/AppShell.vue'
+import SalaryShell    from '@/features/salarios/layouts/SalaryShell.vue'
+
+import Home           from '@/pages/Home.vue'
+import SalariosPage   from '@/features/salarios/SalariosPage.vue'
+import SalaryListPage from '@/features/salarios/pages/SalaryListPage.vue'
+import NotFound       from '@/pages/NotFound.vue'
+
+const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: Home
+    component: Home,
+    meta: { layout: 'app' }
   },
   {
     path: '/salarios',
-    component: () => import('@/features/salarios/SalariosPage.vue')
+    component: SalariosPage,
+    meta: { layout: 'salary' }
+  },
+  {
+    path: '/salarios/list',
+    component: SalaryListPage,
+    meta: { layout: 'salary' }
   },
   {
     path: '/:pathMatch(.*)*',
-    component: () => import('@/pages/NotFound.vue')     // o bórralo si aún no existe
+    component: NotFound,
+    meta: { layout: 'app' }
   }
 ]
 
-const router = createRouter({
+export default createRouter({
   history: createWebHistory(),
   routes
 })
-
-export default router

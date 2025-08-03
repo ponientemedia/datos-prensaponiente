@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, watch, onMounted, defineModel, defineEmits } from 'vue'
+//import { ref, watch, onMounted, defineModel, defineEmits } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { useManifest } from '../composables/useManifest'
 
 const model = defineModel<{ role?:string; region?:string; year?:number }>()

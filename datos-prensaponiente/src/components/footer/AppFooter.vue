@@ -1,24 +1,16 @@
-<!-- src/components/footer/AppFooter.vue -->
 <template>
-  <footer class="bg-neutral-800 text-neutral-300 px-6 py-12 text-sm">
-    <div class="grid md:grid-cols-5 gap-8">
-      <!-- Branding -->
-      <div class="md:col-span-3">
-        <h3 class="text-lg font-semibold text-white mb-1">Datos Prensa Poniente</h3>
-        <p class="mb-6">Your go-to civic data resource!</p>
-        <p class="text-neutral-400 text-xs">Datos Prensa</p>
+  <footer class="bg-neutral-800/70 backdrop-blur border-t border-neutral-700 text-xs">
+    <div class="max-w-7xl mx-auto flex flex-wrap justify-between px-6 py-8 gap-8">
+      <div>
+        <h2 class="font-semibold mb-1">Datos Prensa Poniente</h2>
+        <p>Your go-to civic data resource!</p>
       </div>
-
-      <!-- Links -->
-      <ul class="space-y-2">
-        <li><span class="text-white">Help</span></li>
-        <li><RouterLink to="#">FAQ</RouterLink></li>
-        <li><RouterLink to="#">Customer service</RouterLink></li>
-        <li><RouterLink to="#">How to use</RouterLink></li>
-        <li><RouterLink to="#">Contact us</RouterLink></li>
+      <ul class="space-y-1">
+        <li><a href="#" class="link">Ayuda</a></li>
+        <li><a href="#" class="link">Preguntas Frecuentes</a></li>
+        <li><a href="#" class="link">Como usarlo?</a></li>
+        <li><a href="#" class="link">Contactanos</a></li>
       </ul>
     </div>
   </footer>
 </template>
-
-<script setup/>
