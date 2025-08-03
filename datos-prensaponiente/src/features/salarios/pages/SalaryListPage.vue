@@ -119,11 +119,11 @@ const pageCount = computed(() => Math.ceil(total.value / itemsPerPage.value))
 import type { DataTableHeader } from 'vuetify'
 // 6) cabezeras de la tabla
 const headers: DataTableHeader[] = [
-  { text: 'Año',    value: 'year',     align: 'start' },
-  { text: 'Nombre', value: 'fullName', align: 'start' },
-  { text: 'Cargo',  value: 'role',     align: 'start' },
-  { text: 'Región', value: 'region',   align: 'start' },
-  { text: 'Bruto',  value: 'grossPay', align: 'end'   },
+  { title: 'Año',    value: 'year',     align: 'start' },
+  { title: 'Nombre', value: 'fullName', align: 'start' },
+  { title: 'Cargo',  value: 'role',     align: 'start' },
+  { title: 'Región', value: 'region',   align: 'start' },
+  { title: 'Bruto',  value: 'grossPay', align: 'end'   },
 ]
 </script>
 
